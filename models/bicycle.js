@@ -6,6 +6,7 @@ const statusList = ["available", "busy", "unavailable"];
 
 const bicycleSchema = new Schema(
   {
+    id: { type: String, minlength: [5], required: true },
     name: {
       type: String,
       minlength: [5],
@@ -44,6 +45,7 @@ const bicycleSchema = new Schema(
 );
 
 const addSchema = Joi.object({
+  id: Joi.string().min(5).required(),
   name: Joi.string().min(5).required(),
   type: Joi.string().min(5).required(),
   color: Joi.string().min(5).required(),
